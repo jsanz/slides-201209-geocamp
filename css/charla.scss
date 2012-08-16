@@ -1,0 +1,148 @@
+/*
+Hoja para la charla de OSM de Castellón 2012
+
+Cambios
+- 6/4/12 jsanz
+*/ 
+
+/* Paleta de colores a usar por defecto */
+@import "_variables";
+
+/* colores y fuentes sobrecargados 
+
+/* Colores y fuentes para charla OSGeo */
+
+$cPrimario: $cOSGeo1;
+$cSecundario: $cOSGeoLive;
+
+$cFondo: $cOSGeo2;// $cIz1;
+$cFondo1: lighten($cFondo,50%); /*fondo*/
+$cFondo2: lighten($cFondo,20%); /*exterior*/
+$cFondo3: lighten($cFondo,35%); /*interior*/
+
+$cQuotes: darken($cOSGeo1,50%);
+
+@import url("http://fonts.googleapis.com/css?family=Asap:400,700,400italic,700italic&subset=latin,latin-ext");
+@import url("http://fonts.googleapis.com/css?family=Inconsolata");
+
+$f_principal:  'Asap', verdana, arial, sans-serif;
+$f_condensada: Inconsolata, courier;
+
+
+/* 
+   Plantilla base con todo lo necesario 
+   para una presentación básica
+ */
+@import "_plantilla"; 
+
+.hint{bottom: 60px;}
+
+
+/** BANNER PARA ESTE SARAO **/
+.banner{
+    background-image: url(banner.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    /* los tamaños son los de la imagen */
+    width: 245px;
+  height:45px;
+}
+
+
+/* estilos básicos */
+
+
+a { background:lighten($cOSGeo1,40%);}
+
+img {z-index:1000;}
+
+/* portada */
+#title {
+    padding: 0;
+    //background-image: url('../imgs/osm-logo-mini.png');
+    background-position: top right;
+    background-repeat: no-repeat;
+    h1{
+        font-size: 90px;
+        font-weight: bold;
+        margin-bottom:50px;
+    }
+    h2{
+        font-size: 50px;
+        margin-bottom: 50px
+    }
+    p{font-size:35px;}
+    .yo{font-size:28px;margin-bottom:90px;}
+    
+}
+
+
+
+/* contenidos */
+
+#contenidos{
+    table{
+        width: 100%;
+        font-size:30px;
+        padding: 25px 0;
+        border-top:    3px solid $cOSGeoLive;
+        border-bottom: 3px solid $cOSGeoLive;       
+    }
+    
+    td.bordebajo{
+        border-bottom: 1px solid $cOSGeoLive;
+    }
+    td{
+        width: 50%;
+        margin: 10px 0;
+        padding: 25px 0;    
+    }   
+}
+
+.step.empaquetado .mismaaltura{
+     height:700px;  
+}
+
+
+.impress-on-accion-osgeo #accion-gvsig{opacity:0;}
+.impress-on-accion-gvsig #accion-osgeo{opacity:0;}
+#accion-gvsig .abajo{height:350px;}
+
+#refs{
+    li{font-size:32px;}
+    #ccby{height:100px;}
+}
+
+/* mientras hago la diapo dejo este
+ estilo para ver dónde queda cada cosa
+ en el overview, luego puedo quitarlo
+ y solo saldrán las diapos con clase "section"
+ */
+
+#overview img{
+    display:none;
+}
+ 
+.impress-on-overview{ 
+    /* ocultar todo por defecto */
+    .step {
+    opacity: 0;
+    cursor: pointer;
+    }
+    
+   #overview img {
+       display:block;
+       opacity:1;
+       width:300px;
+       position:absolute;
+       bottom: 15px;
+       left:auto;
+       right:45px;
+   }
+   
+   #title{opacity: 1 !important;}
+}
+
+#overview.active p{
+    margin: 420px 0 0 50px;
+}
