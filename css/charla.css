@@ -514,7 +514,7 @@ img {
     font-size: 35px; }
   #title .yo {
     font-size: 28px;
-    margin-bottom: 90px; }
+    margin-bottom: 20px; }
 
 /* contenidos */
 #contenidos table {
@@ -563,13 +563,17 @@ img {
   .impress-on-overview #overview img {
     display: block;
     opacity: 1;
-    width: 300px;
+    width: 280px;
     position: absolute;
     bottom: 15px;
     left: auto;
-    right: 45px; }
+    right: 15px; }
   .impress-on-overview #title {
     opacity: 1 !important; }
 
 #overview.active p {
   margin: 420px 0 0 50px; }
+
+#forkme {display:none;}
+
+.impress-on-title #forkme, .impress-on-overview #forkme {display:block;}
